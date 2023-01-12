@@ -6,3 +6,12 @@
     font-family: 'Archivo', sans-serif;
     letter-spacing: -1px;
 }
+
+html, body {
+
+    font-family: 'Barlow', sans-serif;
+}
+
+.fw-500 {
+    font-weight: 500 !important; 
+}
