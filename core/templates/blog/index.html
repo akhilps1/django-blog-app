@@ -3,4 +3,30 @@
 {% block content %}
 {% include "../base/navbar.html" %}
 {% include "./components/splash.html" %}
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            {% for post in posts %}
+                <a href="" class="text-decoration-none lazy-load">
+                    <div class="card border-0 pb-3 pb-sm-5">
+                     <div class="row">
+                        <div class="col-8 border-bottom border-1 border-dark">
+                           <div class="card-body p-0">
+                              <div class="pb-2 text-body text-muted">{{post.author}}</div>
+                              <h1 class="mb-1 fs-5 text-body fw-bold">{{post.title|truncatechars:30}}</h1>
+                              <h2 class="mb-1 fs-6 text-muted">{{post.subtitle}}</h2>
+                              <p class="mb-1 text-muted">{{post.updated_at|date:"M d" }}</p>
+                           </div>
+                        </div>
+                        <div class="col-4">
+                           <img src="https://picsum.photos/205/115" class="img-fluid float-end p-2"
+                        </div> 
+                     </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="d-none d-lg-block col-4"></div>
+    </div>
+</div>
 {% endblock content %}

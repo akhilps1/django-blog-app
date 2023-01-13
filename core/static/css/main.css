@@ -15,3 +15,13 @@ html, body {
 .fw-500 {
     font-weight: 500 !important; 
 }
+
+
+@media screen and (max-width:786px) {
+    
+.lazy-load h1{
+    font-size: 22px;
+    letter-spacing: -0.6px;
+}
+    
+}
