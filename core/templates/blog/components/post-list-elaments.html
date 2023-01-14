@@ -1,0 +1,19 @@
+{% for post in posts %}
+<a href="" class="text-decoration-none  mb-3">
+        <div class="card border-0">
+            <div class="row">
+                <div class="col-8 border-bottom border-1 border-dark">
+                    <div class="card-body p-0">
+                        <div class="pb-2 text-body text-muted blog-author">{{post.author}}</div>
+                        <h1 class="mb-1 text-body fw-bold blog-title">{{post.title|truncatechars:40}}</h1>
+                        <h2 class="mb-1 fs-6 text-muted d-none d-sm-block">{{post.subtitle|truncatechars:120}}</h2>
+                        <div class="mb-1 text-muted blog-date">{{post.updated_at|date:"M d" }}</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="https://picsum.photos/205/115" class="img-fluid float-end p-2">
+                </div> 
+            </div>
+        </div>
+    </a>
+{% endfor %}

@@ -7,6 +7,16 @@ from .models import Post
 
 
 class HomeView(ListView):
-    model = Post
+
     template_name = "blog/index.html"
+    model = Post
     context_object_name = "posts"
+    paginate_by = 7
+
+    # def get_template_names(self):
+
+    #     if self.request.htmx:
+    #         print("XXXXX")
+    #     else:
+    #         print("None")
+    #     return "blog/index.html"
