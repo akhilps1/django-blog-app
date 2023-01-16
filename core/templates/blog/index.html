@@ -9,7 +9,8 @@
            {% include './components/post-list-elaments.html' %}
         </div>
         <div class="d-none d-lg-block col-4">
-            
+            {% load tag_cloud %}
+            {% sidebar_tag_cloud %}
         </div>
     </div>
 </div>
