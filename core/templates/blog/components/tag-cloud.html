@@ -1,8 +1,37 @@
+<style>
+    .cloud {
+        background-color: ehite;
+        border: 1px solid black;
+        border-radius: 50px;
+
+    }
+    .cloud:hover{
+        background-color: #333;
+        color: white;
+        
+        
+    }
+    .h-color {
+        text-decoration: none;
+        color: black;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .h-color:hover {
+        color: white;
+    }
+</style>
+
 <div class="mb-4">
-    <div class="border-bottom">
-        <div>
+    <div class="border-bottom ">
+        <div class="pb-4">
+            <h4 class="pb-4 fw-bold fs-14 fs-6">DISCOVER MORE OF WHAT MATTERS TO YOU</h4>
             {% for tag in tags %}
-                <span>{{tag}}</span>
+                <span class="p-1 mb-1 cloud" style="display: inline-block">
+                    <a class="h-color py-1 px-3" href="">
+                        {{tag.name}}
+                    </a>
+                </span>
             {% endfor %}
         </div>
     </div>
