@@ -1,5 +1,5 @@
 {% for post in posts %}
-<a href="" class="text-decoration-none  mb-3">
+<a href="{% url 'post_detail' post.pk %}" class="text-decoration-none  mb-3">
         <div class="card border-0">
             <div class="row">
                 {% if forloop.last %}

@@ -1,5 +1,6 @@
 from django import template
 from django.shortcuts import render
+from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from taggit.models import Tag
 
@@ -18,9 +19,7 @@ class HomeView(ListView):
 
         return "blog/index.html"
 
-    # register = template.Library()
 
-    # @register.inclusion_tag("blog/components/tag-cloud.html")
-    # def sidebar_tag_cloud():
-    #     tags = Tag.objects.all()
-    #     return {"tags": tags}
+class PostDetailView(DetailView):
+    model = Post
+    template_name = "blog/detail.html"
