@@ -40,18 +40,3 @@ html, body {
     font-size: 15px;
 }
 
-.justify-words {
-    text-align: justify;
-    text-justify: inter-word;
-}
-.fs-detail {
-    font-size: 1.2rem;
-    letter-spacing: -0.3px;
-}
-.sub-title {
-    font-weight: 500;
-    font-size: 1.5rem;
-}
-.text-gray {
-    color: #4d4d4d !important;
-}

@@ -5,13 +5,13 @@
                 {% if forloop.last %}
                 <div class="col-8">
                 {% else %}
-                <div class="cpl-12 col-md-8 border-bottom border-1 border-dark ">
+                <div class="cpl-12 col-md-8 border-bottom border-2 border-gray ">
 
                     {% endif %}
                     <div class="card-body p-0">
-                        <div class="pb-2 text-muted blog-author">{{post.author}}</div>
-                        <h1 class="mb-1 fs-5 text-body fw-bold blog-title">{{post.title|truncatechars:40}}</h1>
-                        <h2 class="mb-1 fs-6 text-muted d-none d-sm-block">{{post.subtitle|truncatechars:120}}</h2>
+                        <div class="pb-2 text-muted blog-author text-capitalize">{{post.author}}</div>
+                        <h1 class="mb-1 fs-5 text-body fw-bold blog-title text-capitalize">{{post.title|truncatechars:40}}</h1>
+                        <h2 class="mb-1 fs-6 text-muted d-none d-sm-block text-capitalize">{{post.subtitle|truncatechars:120}}</h2>
                         <div class="mb-1 text-muted blog-date">{{post.updated_at|date:"M d" }}</div>
                     </div>
                 </div>

@@ -2,17 +2,49 @@
 {% block title %}{{object.title}}{% endblock title %}
 {% block content %}
 {% include '../base/navbar.html' %}
-
+<style>
+    .justify-words {
+    text-align: justify;
+    text-justify: inter-word;
+    }
+    .fs-detail {
+        font-size: 1.2rem;
+        letter-spacing: -0.3px;
+    }
+    .sub-title {
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+    
+    .text-gray {
+        color: #4d4d4d;
+    }
+    .fs-14 {
+        font-size: 14px;
+    }
+    .detail-image {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        
+    }
+    @media screen and (max-width:576px) {
+        .fs-detail {
+        font-size: 1rem;
+        letter-spacing: -0.3px;
+        }
+    }
+</style>
 <div class="container pt-5 pb-2 ">
     <div class="row">
         <div class="col-12 col-lg-8 ">
             <p class="text-gray text-capitalize">{{object.author}}</p>
-            <h1 class="fs-3 fw-bold mt-2">{{ object.title }}</h1>
-            <img src="https://picsum.photos/700/350" class="img-fluid float-center my-2">
+            <h1 class="fs-3 fw-bold mt-2 text-capitalize">{{ object.title }}</h1>
+            <img src="https://cdn.pixabay.com/photo/2023/01/10/00/17/italy-7708552_1280.jpg" class="img-fluid my-2 detail-image">
             <div class="my-2">
                 <h3 class="sub-title">{{object.subtitle}}</h3>
                 <div class="justify-words fs-detail text-gray"><p>{{object.content|linebreaks}}</p></div>
-                <p class="text-gray">{{object.updated_at|date:'M d'}}</p>
+                <p class="text-gray fs-14 text-capitalize">{{object.updated_at|date:'M d'}}</p>
             </div>
     
         </div>

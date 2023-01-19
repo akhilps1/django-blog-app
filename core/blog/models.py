@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.urls import reverse
 from taggit.managers import TaggableManager
 
 # Create your models here.
@@ -14,7 +15,14 @@ class Post(models.Model):
 
     title = models.CharField(max_length=250)
     subtitle = models.CharField(max_length=250)
-    slug = models.SlugField(max_length=250, unique=True)
+    slug = models.SlugField(
+        max_length=250,
+        unique=True,
+        help_text=(
+            "Format: required,letter,numbers, use dash instead of space no other simbol allowed."
+        ),
+        verbose_name=("Post Search Url"),
+    )
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
