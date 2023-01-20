@@ -1,9 +1,8 @@
-from django import forms, template
 from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.list import ListView
-from taggit.models import Tag
 
 from .forms import CreatePostForm
 from .models import Post
@@ -23,11 +22,13 @@ class HomeView(ListView):
 
 
 class PostDetailView(DetailView):
+
     model = Post
     template_name = "blog/detail.html"
 
 
 class CreatePostView(CreateView):
+
     template_name = "blog/create-post.html"
     model = Post
     form_class = CreatePostForm
@@ -36,3 +37,11 @@ class CreatePostView(CreateView):
         if form.is_valid:
             form.save()
         return redirect("homepage")
+
+
+class EditPostView(UpdateView):
+
+    template_name = "blog/edit-post.html"
+    model = Post
+    form_class = CreatePostForm
+    success_url = reverse_lazy("homepage")

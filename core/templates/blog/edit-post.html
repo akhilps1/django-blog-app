@@ -1,5 +1,5 @@
 {% extends '../base/base.html' %}
-{% block title %}Create Post{% endblock title %}
+{% block title %}Edit Post{% endblock title %}
 {% block content %}
 {% include "../base/navbar.html" %}
 
@@ -15,7 +15,7 @@
             <div class="d-flex justify-content-center m-md-5 p-md-5" >
                 
                 <form method="POST" class="form-control p-md-5 fw-semibold bg-warning-subtle"  enctype="multipart/form-data">
-                    <h2 class="text-center fw-bold">Create New Post</h2>
+                    <h2 class="text-center fw-bold">Edit Post</h2>
                     
                     <!-- Security token -->
                     {% csrf_token %}
@@ -23,7 +23,7 @@
                     <!-- Using the formset -->
                     {{ form.as_p }}
                     
-                    <input class="form-control btn btn-success fw-bold fs-6" type="submit" value="Create">
+                    <input class="form-control btn btn-success fw-bold fs-6" type="submit" value="Update Post">
                 </form>
             </div>
         </div>

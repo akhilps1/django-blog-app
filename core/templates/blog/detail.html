@@ -8,11 +8,11 @@
     text-justify: inter-word;
     }
     .fs-detail {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         letter-spacing: -0.3px;
     }
     .sub-title {
-        font-weight: 500;
+        font-weight: 600;
         font-size: 1.5rem;
     }
     
@@ -43,7 +43,7 @@
             <img src="https://cdn.pixabay.com/photo/2023/01/10/00/17/italy-7708552_1280.jpg" class="img-fluid my-2 detail-image">
             <div class="my-2">
                 <h3 class="sub-title">{{object.subtitle}}</h3>
-                <div class="justify-words fs-detail text-gray"><p>{{object.content|linebreaks}}</p></div>
+                <div class="justify-words fs-detail text-gray fw-medium"><p>{{object.content|linebreaks}}</p></div>
                 <p class="text-gray fs-14 text-capitalize">{{object.updated_at|date:'M d'}}</p>
             </div>
     

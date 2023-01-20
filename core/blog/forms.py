@@ -19,24 +19,36 @@ class CreatePostForm(forms.ModelForm):
 
         widgets = {
             "title": forms.TextInput(
-                attrs={"class": "form-control border-dark mt-2"},
+                attrs={
+                    "class": "form-control border-none mt-2 fw-semibold text-capitalize"
+                },
             ),
             "subtitle": forms.TextInput(
-                attrs={"class": "form-control border-dark"},
+                attrs={
+                    "class": "form-control border-none mt-2 fw-semibold text-capitalize"
+                },
             ),
             "slug": forms.TextInput(
-                attrs={"class": "form-control border-dark"},
+                attrs={
+                    "class": "form-control border-none my-2 fw-semibold text-lowercase"
+                },
             ),
             "author": forms.Select(
-                attrs={"class": "form-control border-dark form-select"},
+                attrs={
+                    "class": "form-control border-none my-2 form-select fw-semibold text-capitalize"
+                },
             ),
             "content": forms.Textarea(
-                attrs={"class": "form-control border-dark"},
+                attrs={"class": "form-control border-none my-2 fw-semibold"},
             ),
             "status": forms.Select(
-                attrs={"class": "form-control border-dark form-select"},
+                attrs={
+                    "class": "form-control border-none my-2 form-select fw-semibold"
+                },
             ),
             "tags": forms.TextInput(
-                attrs={"class": "form-control border-dark mb-2"},
+                attrs={
+                    "class": "form-control border-none my-2 mb-2 fw-semibold text-lowercase"
+                },
             ),
         }
