@@ -8,32 +8,40 @@
 </style>
 
 {% for post in posts %}
-<a href="{% url 'post_detail' post.pk %}" class="text-decoration-none  mb-3">
-        <div class="card border-0">
-            <div class="row">
-                {% if forloop.last %}
-                <div class="col-md-8 col-12">
-                {% else %}
-                <div class="cpl-12 col-md-8 border-bottom border-2 border-gray ">
 
-                    {% endif %}
-                    <div class="card-body p-0">
+    <div class="card border-0">
+        <div class="row">
+            {% if forloop.last %}
+            <div class="col-md-8 col-12">
+            {% else %}
+            <div class="cpl-12 col-md-8 border-bottom border-2 border-gray ">
+
+                {% endif %}
+                <div class="card-body p-0">
+                    <a href="{% url 'post_detail' post.pk %}" class="text-decoration-none  mb-3">
                         <div class="pb-2 text-muted blog-author text-capitalize">{{post.author}}</div>
                         <h1 class="mb-1 fs-5 text-body fw-bold blog-title text-capitalize">{{post.title|truncatechars:40}}</h1>
                         <h2 class="mb-1 fs-6 text-muted d-none d-sm-block text-capitalize pt-1">{{post.subtitle|truncatechars:120}}</h2>
-                        <div class="mb-1 text-muted blog-date pt-3 pt-sm-1">
-                            <span class="text-muted">{{post.updated_at|date:"M d" }}</span>
-                            {% if user.is_authenticated and user.is_staff or user.is_superuser %}
-
-                                <a class="float-end hover-style" href="{% url 'edit_post' post.pk %}"><i class="fa-regular fa-pen-to-square pe-3"></i></a>
-                            {% endif %}
-                        </div>
+                    </a>
+                    <div class="mb-1 text-muted blog-date pt-3 pt-sm-1">
+                        <span class="text-muted">{{post.updated_at|date:"M d" }}</span>
+                        {% if user.is_authenticated and user.is_staff or user.is_superuser %}
+                            {% include './post-delete-popup.html' %}
+                            <a class="float-end hover-style" href="{% url 'edit_post' post.pk %}"><i class="fa-regular fa-pen-to-square pe-3"></i></a>
+                        {% endif %} 
                     </div>
                 </div>
-                <div class="col-4 d-none d-md-block">
-                    <img src="https://picsum.photos/205/115" class="img-fluid float-end p-2">
-                </div> 
+  
             </div>
+            <div class="col-4 d-none d-md-block">
+                <img src="https://picsum.photos/205/115" class="img-fluid float-end p-2">
+            </div> 
         </div>
-    </a>
+    </div>
+
 {% endfor %}
+
+
+{% comment %} model {% endcomment %}
+
+

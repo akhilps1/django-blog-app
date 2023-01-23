@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
 
 from .forms import CreatePostForm
@@ -45,3 +45,7 @@ class EditPostView(UpdateView):
     model = Post
     form_class = CreatePostForm
     success_url = reverse_lazy("homepage")
+
+
+class DeletePost(DeleteView):
+    pass
