@@ -18,7 +18,7 @@
 
                 {% endif %}
                 <div class="card-body p-0">
-                    <a href="{% url 'post_detail' post.pk %}" class="text-decoration-none  mb-3">
+                    <a href="{% url 'post_detail' post.slug %}" class="text-decoration-none  mb-3">
                         <div class="pb-2 text-muted blog-author text-capitalize">{{post.author}}</div>
                         <h1 class="mb-1 fs-5 text-body fw-bold blog-title text-capitalize">{{post.title|truncatechars:40}}</h1>
                         <h2 class="mb-1 fs-6 text-muted d-none d-sm-block text-capitalize pt-1">{{post.subtitle|truncatechars:120}}</h2>

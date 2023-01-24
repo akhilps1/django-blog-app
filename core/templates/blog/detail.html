@@ -1,5 +1,5 @@
 {% extends '../base/base.html' %}
-{% block title %}{{object.title}}{% endblock title %}
+{% block title %}{{post.title}}{% endblock title %}
 {% block content %}
 {% include '../base/navbar.html' %}
 <style>
@@ -25,7 +25,7 @@
     .detail-image {
         height: 400px;
         width: 100%;
-        object-fit: cover;
+        post-fit: cover;
         
     }
     @media screen and (max-width:576px) {
@@ -38,13 +38,13 @@
 <div class="container pt-5 pb-2 ">
     <div class="row">
         <div class="col-12 col-lg-8 ">
-            <p class="text-gray text-capitalize">{{object.author}}</p>
-            <h1 class="fs-3 fw-bold mt-2 text-capitalize">{{ object.title }}</h1>
+            <p class="text-gray text-capitalize">{{post.author}}</p>
+            <h1 class="fs-3 fw-bold mt-2 text-capitalize">{{ post.title }}</h1>
             <img src="https://cdn.pixabay.com/photo/2023/01/10/00/17/italy-7708552_1280.jpg" class="img-fluid my-2 detail-image">
             <div class="my-2">
-                <h3 class="sub-title">{{object.subtitle}}</h3>
-                <div class="justify-words fs-detail text-gray fw-medium"><p>{{object.content|linebreaks}}</p></div>
-                <p class="text-gray fs-14 text-capitalize">{{object.updated_at|date:'M d'}}</p>
+                <h3 class="sub-title">{{post.subtitle}}</h3>
+                <div class="justify-words fs-detail text-gray fw-medium"><p>{{post.content|linebreaks}}</p></div>
+                <p class="text-gray fs-14 text-capitalize">{{post.updated_at|date:'M d'}}</p>
             </div>
     
         </div>

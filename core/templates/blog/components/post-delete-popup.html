@@ -21,7 +21,7 @@
         <button type="button" class="btn btn-success" data-dismiss="modal">
           Cancel
         </button>
-        <button type="button" class="btn btn-danger">Delete Post</button>
+        <a href="{% url 'delete_post' post.pk %}" type="button" class="btn btn-danger">Delete Post</a>
       </div>
     </div>
   </div>

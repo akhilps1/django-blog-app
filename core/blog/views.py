@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
@@ -21,10 +21,9 @@ class HomeView(ListView):
         return "blog/index.html"
 
 
-class PostDetailView(DetailView):
-
-    model = Post
-    template_name = "blog/detail.html"
+def post_detail(request, post):
+    post = get_object_or_404(Post, slug=post, status="published")
+    return render(request, "blog/detail.html", {"post": post})
 
 
 class CreatePostView(CreateView):
@@ -48,4 +47,6 @@ class EditPostView(UpdateView):
 
 
 class DeletePost(DeleteView):
-    pass
+    template_name = "blog/components/post-delete-popup.html"
+    model = Post
+    success_url = reverse_lazy("homepage")
