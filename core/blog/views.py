@@ -1,6 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
-from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
 
@@ -22,8 +21,16 @@ class HomeView(ListView):
 
 
 def post_detail(request, post):
-    post = get_object_or_404(Post, slug=post, status="published")
-    return render(request, "blog/detail.html", {"post": post})
+    post = get_object_or_404(
+        Post,
+        slug=post,
+        status="published",
+    )
+    return render(
+        request,
+        "blog/detail.html",
+        {"post": post},
+    )
 
 
 class CreatePostView(CreateView):
