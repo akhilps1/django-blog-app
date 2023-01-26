@@ -12,6 +12,7 @@
         text-align: justify;
         text-justify: inter-word;
         }
+       
         .fs-detail {
             font-size: 1.1rem;
             letter-spacing: -0.3px;
@@ -30,24 +31,30 @@
         .detail-image {
             height: 400px;
             width: 100%;
-            post-fit: cover;
+            object-fit: cover;
             
         }
         @media screen and (max-width:576px) {
             .fs-detail {
-            font-size: 1rem;
-            letter-spacing: -0.3px;
+                font-size: 1rem;
+                letter-spacing: -0.3px;
+            }
+
+            .detail-image {
+                height: 250px;
+                width: 100%;
+                object-fit: cover;
             }
         }
     </style>
-    <div class="p-4">
-        <p class="text-gray text-capitalize">{{post.author}}</p>
-        <h1 class="fs-3 fw-bold mt-2 text-capitalize">{{ post.title }}</h1>
+    <div class="p-lg-4 mx-lg-5 mt-3">
+        <p class="text-muted text-capitalize">{{post.author}}</p>
+        <h2 class="fs-2 fw-bold mt-2 text-capitalize">{{ post.title }}</h2>
         <img src="https://cdn.pixabay.com/photo/2023/01/10/00/17/italy-7708552_1280.jpg" class="img-fluid my-2 detail-image">
         <div class="my-2">
             <h3 class="sub-title">{{post.subtitle}}</h3>
             <div class="justify-words fs-detail text-gray fw-medium"><p>{{post.content|linebreaks}}</p></div>
-            <p class="text-gray fs-14 text-capitalize">{{post.updated_at|date:'M d'}}</p>
+            <p class="text-muted fs-14 text-capitalize">{{post.updated_at|date:'M d'}}</p>
         </div>
     </div>
 {% endblock content-mid %}

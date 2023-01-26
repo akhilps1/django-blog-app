@@ -6,6 +6,10 @@ from taggit.managers import TaggableManager
 # Create your models here.
 
 
+class Media(models.Model):
+    image = models.ImageField(upload_to="media/", verbose_name="post_image")
+
+
 class Post(models.Model):
 
     options = {
@@ -14,6 +18,9 @@ class Post(models.Model):
     }
 
     title = models.CharField(max_length=250)
+    image = models.ForeignKey(
+        Media, on_delete=models.CASCADE, related_name="post_medias"
+    )
     subtitle = models.CharField(max_length=250)
     slug = models.SlugField(
         max_length=250,
